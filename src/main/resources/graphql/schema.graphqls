@@ -1,0 +1,31 @@
+type Student{
+id:ID!
+name:String
+branch:Branch
+}
+
+enum Branch{
+    CSC
+    EEE
+    ECE
+    AI
+    ML
+}
+
+type Query {
+
+findAll:[Student]
+
+findOne(id:ID) : Student
+
+searchStudent(id:ID,name:String) :[Student]
+
+}
+
+type Mutation {
+
+    addStudent(name:String, branch:Branch) : Student
+    update(id:ID,name:String,branch:Branch) :Student
+    delete(id:ID):Student
+
+}
